@@ -6,7 +6,7 @@ function initializeMap() {
       [40.62, -74.10],
       [40.86, -73.85],
     ]
-  }).setView([40.7, -74.0], 15);
+  }).setView([40.7, -74.0], 14);
   
   let tileUrl = 'https://tile.thunderforest.com/cycle/{z}/{x}/{y}.png?apikey=3c0d7c0f2de749deabab6bdf6b6dfbbb';
   let layer = new L.TileLayer(tileUrl, {maxZoom: 18});
