@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1">
+  <title>Better Bike Angel Map</title>
+  <link rel="stylesheet" href="leaflet/leaflet.css"/>
+  <script src="leaflet/leaflet.js"></script>
+  <style>
+    .gray-dot {
+      width: auto !important;
+      height: inherit !important;
+      background-color: gray;
+      display: inline-block;
+      border-radius: 50%;
+      color: white;
+    }
+    .green-dot {
+      width: auto !important;
+      height: inherit !important;
+      background-color: green;
+      display: inline-block;
+      border-radius: 50%;
+      color: white;
+    }
+    .red-border {
+      border: 5px solid red;
+    }
+    body {
+      padding: 0;
+      margin: 0;
+    }
+    html, body {
+      height: 100%;
+      width: 100%;
+    }
+    #inputs {
+      height: 25%;
+      width: 100%;
+    }
+    #map {
+      height: 75%;
+      width: 100%;
+    }
+    h1 {
+      font-size: 1em;
+    }
+  </style>
+</head>
+<body>
+<div id="inputs">
+<h1>Better Bike Angels Map</h1>
+<p>A red border around a station means that there aren't enough bikes/docks to get points at that station. You can customize the minimum points to be highlighted in green below. Refresh the page for new data.</p>
+<label for="minimumPoints">Minimum Points: </label>
+<input type="number" name="minimumPoints" value="2", id="minimumPoints", inputmode="numeric">
+<button type="submit" onclick="refreshMarkers()">Submit</button>
+</div>
+<div id="map"></div>
+<script src="browser.js"></script>
+<script>
+  this.map = initializeMap();
+  this.data = getData();
+  refreshMarkers();
+</script>
+</body>
+</html>

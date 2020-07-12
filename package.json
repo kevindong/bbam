@@ -1,0 +1,24 @@
+{
+  "name": "bbam",
+  "version": "1.0.0",
+  "description": "Better Bike Angels Map",
+  "main": "app.js",
+  "scripts": {
+    "start": "npm app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kevindong/bbam.git"
+  },
+  "author": "Kevin Dong",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/kevindong/bbam/issues"
+  },
+  "homepage": "https://github.com/kevindong/bbam#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "node-fetch": "^2.6.0"
+  }
+}
