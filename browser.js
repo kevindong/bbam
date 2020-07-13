@@ -29,6 +29,7 @@ async function refreshMarkers() {
   this.markerLayer = new L.layerGroup().addTo(this.map);
   
   let minimumPoints = document.getElementById("minimumPoints").value;
+  let showLowPointStations = document.getElementById("showLowPointStations").checked;
   let data = await this.data;
   for (const point of data.features) {
     let bikesAvailable = point.properties.station.bikes_available;
@@ -36,14 +37,17 @@ async function refreshMarkers() {
     let tooltipText = `${point.properties.station.name}<br>Bikes Available: ${bikesAvailable}<br>Docks Available: ${docksAvailable}`;
 
     let bikeAngelsAction = point.properties.bike_angels_action;
-    let bikeAngelsPoints = point.properties.bike_angels_points;
+    let bikeAngelsPoints = point.properties.bike_angels_points || 0;
 
     let text = "";
     let color = "";
     // The station is disabled
     if (bikesAvailable === 0 && docksAvailable === 0) {
       continue;
-    } else if (bikeAngelsAction === undefined || bikeAngelsAction === "neutral" || bikeAngelsPoints === undefined) {
+    } else if (!showLowPointStations && bikeAngelsPoints < minimumPoints) {
+      continue;
+    // The station has no incentive
+    } else if (!["give", "take"].includes(bikeAngelsAction)) {
       color = "gray-dot";
       text = "0";
     } else {

@@ -34,11 +34,10 @@
       width: 100%;
     }
     #inputs {
-      height: 25%;
       width: 100%;
     }
     #map {
-      height: 75%;
+      height: 90%;
       width: 100%;
     }
     h1 {
@@ -50,8 +49,14 @@
 <div id="inputs">
 <h1>Better Bike Angels Map</h1>
 <p>A red border around a station means that there aren't enough bikes/docks to get points at that station. You can customize the minimum points to be highlighted in green below. Refresh the page for new data.</p>
+<div>
 <label for="minimumPoints">Minimum Points: </label>
-<input type="number" name="minimumPoints" value="2", id="minimumPoints", inputmode="numeric">
+<input type="number" name="minimumPoints" value="2" id="minimumPoints" inputmode="numeric">
+</div>
+<div>
+<label for="showLowPointStations">Show Low Point Stations:</label>
+<input type="checkbox" name="showLowPointStations" id="showLowPointStations">
+</div>
 <button type="submit" onclick="refreshMarkers()">Submit</button>
 </div>
 <div id="map"></div>
