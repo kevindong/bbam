@@ -9,7 +9,10 @@ function initializeMap() {
   }).setView([40.7, -74.0], 14);
   
   let tileUrl = 'https://tile.thunderforest.com/cycle/{z}/{x}/{y}.png?apikey=3c0d7c0f2de749deabab6bdf6b6dfbbb';
-  let layer = new L.TileLayer(tileUrl, {maxZoom: 18});
+  let layer = new L.TileLayer(tileUrl, {
+    maxZoom: 18,
+    attribution: 'Maps © <a href="http://www.thunderforest.com">Thunderforest</a>, Data © <a href="http://www.openstreetmap.org/copyright">OpenStreetMap contributors</a>',
+  });
   map.addLayer(layer);
   return map
 }
