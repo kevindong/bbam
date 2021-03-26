@@ -65,6 +65,8 @@ async function refreshMarkers() {
       text = `${arrow} ${bikeAngelsPoints}`;
     }
 
+    text += `<br/>B${bikesAvailable} - D${docksAvailable}`;
+
     L.marker(point.geometry.coordinates.sort().reverse(), {icon: new L.DivIcon({
       className: color,
       html: `<div style=\"text-align: center; margin: 5px; white-space: nowrap;\">${text}</div>`
