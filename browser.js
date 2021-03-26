@@ -3,10 +3,10 @@ function initializeMap() {
     minZoom: 12,
     maxZoom: 18,
     maxBounds: [
-      [40.62, -74.10],
-      [40.86, -73.85],
+      [33.231943, -111.891210],
+      [33.294085, -111.751815],
     ]
-  }).setView([40.7, -74.0], 14);
+  }).setView([33.25, -111.8], 14);
   
   let tileUrl = 'https://tile.thunderforest.com/cycle/{z}/{x}/{y}.png?apikey=3c0d7c0f2de749deabab6bdf6b6dfbbb';
   let layer = new L.TileLayer(tileUrl, {
